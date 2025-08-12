@@ -9,12 +9,12 @@ O controlador envia 4 palavras predefinidas e armazena as palavras recebidas do 
 - Palavras enviadas: `0xFA`, `0xFB`, `0xFC`, `0xFE`
 
 ## 🛠️ Testbench
-O funcionamento foi validado através de um módulo *testbench*, que simulou a comunicação SPI e exibiu as palavras recebidas no terminal.
+O funcionamento foi validado através de um módulo *testbench*, que simulou a comunicação SPI, exibiu as palavras recebidas no terminal e as formas de onda pelo gtkwave.
 
 ## 📝 Resultado da simulação (terminal)
 ```
 
-\=== RESULTADOS RECEBIDOS ===
+=== RESULTADOS RECEBIDOS ===
 Palavra 0 recebida: fa
 Palavra 1 recebida: fb
 Palavra 2 recebida: fc
