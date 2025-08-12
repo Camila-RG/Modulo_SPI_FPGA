@@ -1,31 +1,32 @@
 # Controlador SPI com spi_master.sv
 
-Este projeto implementa um módulo controlador para comunicação SPI, utilizando o módulo auxiliar `spi_master.sv` para realizar a transferência de dados.
+Este projeto implementa um módulo controlador de comunicação SPI, responsável por realizar a transferência de dados utilizando o módulo `spi_master.sv`.  
+O controlador envia 4 palavras predefinidas e armazena as palavras recebidas do dispositivo escravo.
 
-## 📌 Objetivo
+## Requisitos
+- Quantidade de palavras a serem transferidas: **4** (entrada: `data_words`)
+- Condição do sinal seletor de escravo **SS** ativo entre transferências (entrada: `tied_SS`)
+- Palavras enviadas: `0xFA`, `0xFB`, `0xFC`, `0xFE`
 
-* Transmitir **4 palavras** de dados (`data_words`) para um dispositivo escravo.
-* Manter o sinal `SS` ativo entre cada transferência (`tied_SS`).
-* Testar o funcionamento com um *testbench*.
+## 🛠️ Testbench
+O funcionamento foi validado através de um módulo *testbench*, que simulou a comunicação SPI e exibiu as palavras recebidas no terminal.
 
-## 🔧 Detalhes da implementação
+## 📝 Resultado da simulação (terminal)
+```
 
-* Palavras transmitidas: **8hFA, 8hFB, 8hFC, 8hFE**
-* Palavras recebidas: armazenadas para análise.
-* Protocolo utilizado: **SPI**.
-
-## 🖥️ Teste e simulação
-
-A simulação foi realizada utilizando **o terminal e o GTKWave** para inspecionar as formas de onda e validar a comunicação.
-
-## 📂 Estrutura do projeto
+\=== RESULTADOS RECEBIDOS ===
+Palavra 0 recebida: fa
+Palavra 1 recebida: fb
+Palavra 2 recebida: fc
+Palavra 3 recebida: fe
+Simulação finalizada.
 
 ```
-├── spi_master.sv
-├── spi_controller.sv
-├── tb_spi_controller.sv
-```
+
+## 📂 Estrutura
+- `spi_master.sv` → Módulo mestre SPI
+- `spi_controller.sv` → Módulo controlador
+- `tb_spi_controller.sv` → Testbench
 
 ## 📜 Licença
-
-Projeto desenvolvido para fins acadêmicos. Uso livre para estudo.
+Este projeto é de uso educacional no contexto de desenvolvimento com FPGA.
