@@ -1,4 +1,4 @@
-# Controlador SPI com `spi_master.sv`
+# Controlador SPI com spi_master.sv
 
 Este projeto implementa um módulo controlador para comunicação SPI, utilizando o módulo auxiliar `spi_master.sv` para realizar a transferência de dados.
 
